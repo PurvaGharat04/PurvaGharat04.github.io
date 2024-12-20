@@ -34,12 +34,3 @@ jobs:
           publish_branch: demo
           user_name: Github Actions deployment bot
           user_email: githubactionsbot@users.noreply.github.com
-
-      - name: Push changes
-        run: |
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git remote set-url origin https://<PAT>@github.com/USERNAME/REPO.git
-            git push origin demo
-            env:
-            PAT: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
